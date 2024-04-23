@@ -86,3 +86,5 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 搞懂原理图，屏幕背光是上电正常亮，电路图设计的是控制屏幕上电时的GND的电平变化改变背光亮度，程序上是通过pwm改变背光引脚。
 
 使用的是st7789芯片通过spi驱动屏幕显示的，该程序用了TFT-eSPI库进行配置st7789芯片寄存器配置，在使用了lvgl框架显示屏幕不同的画面。（需要学习了解tft_espi和lvgl）
+
+# 24-4-23 上传程序到git
