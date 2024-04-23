@@ -25,6 +25,12 @@ namespace HAL
     typedef void(* Power_CallbackFunction_t)(void);
     void Power_SetEventCallback(Power_CallbackFunction_t callback);
 
+/* Encoder */
+    void Encoder_Init();
+    void Encoder_Update();
+    int16_t Encoder_GetDiff();
+    bool Encoder_GetIsPush();
+    void Encoder_SetEnable(bool en);
 
 /* Buzzer */
     void Buzz_init();

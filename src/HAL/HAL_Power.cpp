@@ -60,8 +60,8 @@ static void Power_ADC_TrigUpdate()
 {
     Power_ADCValue = analogRead(CONFIG_BAT_DET_PIN);
 
-    Serial.print("Power_ADCValue ");
-    Serial.println(Power_ADCValue);
+    // Serial.print("Power_ADCValue ");
+    // Serial.println(Power_ADCValue);
 }
 
 /**

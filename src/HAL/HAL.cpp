@@ -6,8 +6,8 @@ void my_test(void)
     Serial.print("Starting Peak num ");
     Serial.println(num++);
 
-    HAL::Power_Info_t power;
-    HAL::Power_GetInfo(&power);
+    // HAL::Power_Info_t power;
+    // HAL::Power_GetInfo(&power);
 
     // HAL::Audio_PlayMusic("Startup");
     // HAL::Audio_PlayMusic("Shutdown");
@@ -27,6 +27,7 @@ void HAL::Init()
     Serial.println("Author: " "MW");
 
     HAL::Power_Init();
+    HAL::Encoder_Init();
     HAL::Buzz_init();
     HAL::Audio_Init();
 }
@@ -35,8 +36,12 @@ void HAL::Init()
 void HAL::Update()
 {
     HAL::Power_Update();
+    HAL::Encoder_Update();
     HAL::Audio_Update();
     // HAL::Audio_PlayMusic("Startup");
     
-    __IntervalExecute(my_test(), 2000);
+    // __IntervalExecute(my_test(), 2000);
+
+
+    // __IntervalExecute( HAL::Encoder_Update(), 200);
 }
