@@ -27,6 +27,7 @@ void HAL::Init()
     Serial.println("Author: " "MW");
 
     HAL::Power_Init();
+    HAL::Backlight_Init();
     HAL::Encoder_Init();
     HAL::Buzz_init();
     HAL::Audio_Init();

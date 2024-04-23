@@ -98,9 +98,9 @@ void HAL::Encoder_Init()
 
 void HAL::Encoder_Update()
 {
-    EncoderPush.EventMonitor(Encoder_GetIsPush());
-    // uint8_t a = digitalRead(CONFIG_ENCODER_A_PIN);
-    // uint8_t b = digitalRead(CONFIG_ENCODER_B_PIN);
+    // EncoderPush.EventMonitor(Encoder_GetIsPush());
+    uint8_t a = digitalRead(CONFIG_ENCODER_A_PIN);
+    uint8_t b = digitalRead(CONFIG_ENCODER_B_PIN);
 
     // Serial.print("a ");
     // Serial.println(a);

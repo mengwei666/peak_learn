@@ -12,6 +12,13 @@ namespace HAL
     void Init();
     void Update();
 
+/* Backlight */
+    void Backlight_Init();
+    uint32_t Backlight_GetValue();
+    void Backlight_SetValue(int32_t val);
+    void Backlight_SetGradual(uint32_t target, uint16_t time = 500);
+    void Backlight_ForceLit(bool en);
+
 /* Power */
     void Power_Init();
     void Power_HandleTimeUpdate();
