@@ -79,11 +79,11 @@ bool TonePlayer::Update(uint32_t tick)
     {
         if(tick > NextTime)
         {
-            Serial.print("Length: ");
-            Serial.println(Length);
-            Serial.print("CurrentPos: ");
-            Serial.println(CurrentPos);
-            Serial.println("-------");
+            // Serial.print("Length: ");
+            // Serial.println(Length);
+            // Serial.print("CurrentPos: ");
+            // Serial.println(CurrentPos);
+            // Serial.println("-------");
             
             CallbackFunction(CurrentMusic[CurrentPos].Freq, CurrentMusic[CurrentPos].Volume);
 

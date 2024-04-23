@@ -53,8 +53,7 @@
     ledcSetup(CONFIG_BUZZ_CHANNEL, 0, 8); //配置LED控制器的通道
     ledcWriteTone(CONFIG_BUZZ_CHANNEL, 0); //设置LED控制器的通道输出的PWM占空比
     ```
-* [X] 
-      任务句柄区别：
+* [X] 任务句柄区别：
 
 ```
 xTaskCreate(BuzzerThread, "BuzzerThread", 800, nullptr, 1, &handleBuzzerThread);
@@ -69,3 +68,5 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 * [X] 了解蜂鸣器工作原理
   1.创建一个蜂鸣器任务进程。如果有函数需要运行蜂鸣器功能，则响应。
   2.在其他进程中，添加蜂鸣器状态功能，哪里需要就在哪里添加。
+
+# 24-4-15 测试电源模块
