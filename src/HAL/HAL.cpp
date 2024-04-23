@@ -39,6 +39,11 @@ void HAL::Update()
     HAL::Power_Update();
     HAL::Encoder_Update();
     HAL::Audio_Update();
+
+
+
+
+
     // HAL::Audio_PlayMusic("Startup");
     
     // __IntervalExecute(my_test(), 2000);

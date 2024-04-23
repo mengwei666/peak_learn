@@ -88,3 +88,9 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 使用的是st7789芯片通过spi驱动屏幕显示的，该程序用了TFT-eSPI库进行配置st7789芯片寄存器配置，在使用了lvgl框架显示屏幕不同的画面。（需要学习了解tft_espi和lvgl）
 
 # 24-4-23 上传程序到git
+
+学习之前lvgl_mode的程序，了解图片是怎样显示的，然后移植该程序
+步骤：
+选一个图片将图片裁剪到240*240,通过lvgl 在线转换图片网站： https://lvgl.io/tools/imageconverter (版本是V9.1 color format 选的是cf_TRUE_COLOR)
+
+将生成的图片文件c拖到到font中，使用lv_examplas.cpp 的函数调用。初始化函数。

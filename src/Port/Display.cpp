@@ -22,6 +22,7 @@
  */
 #include "Display.h"
 #include "HAL/HAL.h"
+#include "lv_examples.h"
 
 TaskHandle_t handleTaskLvgl;
 void TaskLvglUpdate(void* parameter)
@@ -38,24 +39,26 @@ void TaskLvglUpdate(void* parameter)
 
 
 /**
-  * @brief  ÏÔÊ¾³õÊ¼»¯
-  * @param  ÎÞ
-  * @retval ÎÞ
+  * @brief  ï¿½ï¿½Ê¾ï¿½ï¿½Ê¼ï¿½ï¿½
+  * @param  ï¿½ï¿½
+  * @retval ï¿½ï¿½
   */
 void Port_Init()
 {
     static SCREEN_CLASS screen;
 
-    /* ÆÁÄ»³õÊ¼»¯ */
+    /* ï¿½ï¿½Ä»ï¿½ï¿½Ê¼ï¿½ï¿½ */
     screen.begin();
     screen.setRotation(0);
     screen.fillScreen(TFT_BLACK);
 
-    /* lvgl³õÊ¼»¯ */
+    /* lvglï¿½ï¿½Ê¼ï¿½ï¿½ */
     lv_init();
     lv_port_disp_init(&screen);
     lv_port_indev_init();
     lv_fs_if_init();
+
+    lv_example_img_9();
 
     // Update display in parallel thread.
     xTaskCreate(
@@ -66,6 +69,6 @@ void Port_Init()
         configMAX_PRIORITIES - 1,
         &handleTaskLvgl);
 
-    /* ±³¹â½¥ÁÁ */
+    /* ï¿½ï¿½ï¿½â½¥ï¿½ï¿½ */
     HAL::Backlight_SetGradual(500, 1000);
 }

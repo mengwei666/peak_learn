@@ -14,4 +14,7 @@ void setup()
 void loop()
 {
     HAL::Update();
+
+    lv_tick_inc(5); 
+ 	lv_task_handler();
 }

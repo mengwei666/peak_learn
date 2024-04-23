@@ -3,9 +3,9 @@
 
 static uint32_t backlightValue = 0;
 /**
-  * @brief  ±³¹âÁÁ¶È½¥±ä£¬ÊÜlv_anim¿ØÖÆ
-  * @param  obj:ÎÞÓÃ
-  * @param  brightness:ÁÁ¶ÈÖµ
+  * @brief  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ä£¬ï¿½ï¿½lv_animï¿½ï¿½ï¿½ï¿½
+  * @param  obj:ï¿½ï¿½ï¿½ï¿½
+  * @param  brightness:ï¿½ï¿½ï¿½ï¿½Öµ
   * @retval None
   */
 static void Backlight_AnimCallback(void *obj, int32_t brightness)
@@ -14,22 +14,22 @@ static void Backlight_AnimCallback(void *obj, int32_t brightness)
 }
 
 /**
-  * @brief  ±³¹â³õÊ¼»¯
-  * @param  ÎÞ
-  * @retval ÎÞ
+  * @brief  ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
+  * @param  ï¿½ï¿½
+  * @retval ï¿½ï¿½
   */
 void HAL::Backlight_Init()
 {
-    /*PWM³õÊ¼»¯£¬1024¼¶£¬5KHzÆµÂÊ*/
+    /*PWMï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½1024ï¿½ï¿½ï¿½ï¿½5KHzÆµï¿½ï¿½*/
     ledcSetup(0, 5000, 10);
     ledcAttachPin(CONFIG_SCREEN_BLK_PIN, 0);
-    ledcWrite(0, 20);
+    ledcWrite(0, 1024);
 }
 
 /**
-  * @brief  ±³¹âÉèÖÃ£¬½¥±äÐ§¹û
-  * @param  target:Ä¿±êÁÁ¶È(0~1000 -> 0~100%)
-  * @retval ÎÞ
+  * @brief  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
+  * @param  target:Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0~1000 -> 0~100%)
+  * @retval ï¿½ï¿½
   */
 void HAL::Backlight_SetGradual(uint32_t target, uint16_t time)
 {
@@ -44,9 +44,9 @@ void HAL::Backlight_SetGradual(uint32_t target, uint16_t time)
 }
 
 /**
-  * @brief  »ñÈ¡±³¹âÁÁ¶È
-  * @param  ÎÞ
-  * @retval µ±Ç°ÁÁ¶È(0~1000 -> 0~100%)
+  * @brief  ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * @param  ï¿½ï¿½
+  * @retval ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½(0~1000 -> 0~100%)
   */
 uint32_t HAL::Backlight_GetValue()
 {
@@ -54,9 +54,9 @@ uint32_t HAL::Backlight_GetValue()
 }
 
 /**
-  * @brief  ÉèÖÃ±³¹âÁÁ¶È
-  * @param  val: ÁÁ¶È(0~1000 -> 0~100%)
-  * @retval ÎÞ
+  * @brief  ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * @param  val: ï¿½ï¿½ï¿½ï¿½(0~1000 -> 0~100%)
+  * @retval ï¿½ï¿½
   */
 void HAL::Backlight_SetValue(int32_t val)
 {
@@ -67,9 +67,9 @@ void HAL::Backlight_SetValue(int32_t val)
 }
 
 /**
-  * @brief  ±³¹âÇ¿ÖÆµãÁÁ
-  * @param  en: ±³¹âÊ¹ÄÜ
-  * @retval ÎÞ
+  * @brief  ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Æµï¿½ï¿½ï¿½
+  * @param  en: ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
+  * @retval ï¿½ï¿½
   */
 void HAL::Backlight_ForceLit(bool en)
 {
