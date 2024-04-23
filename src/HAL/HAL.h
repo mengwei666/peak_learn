@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <Arduino.h>
 #include "CommonMacro.h"
-#include "App/Configs/Config.h"
+#include "TonePlayer.h"
 
 namespace HAL
 {
