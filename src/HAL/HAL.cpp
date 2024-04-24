@@ -1,4 +1,10 @@
 #include "HAL/HAL.h"
+#include "App/Configs/Version.h"
+
+#define DISP_HOR_RES         CONFIG_SCREEN_HOR_RES
+#define DISP_VER_RES         CONFIG_SCREEN_VER_RES
+#define DISP_BUF_SIZE        CONFIG_SCREEN_BUFFER_SIZE
+extern lv_color_t* lv_disp_buf_p;
 
 void my_test(void)
 {
@@ -25,6 +31,11 @@ void HAL::Init()
     Serial.begin(115200);
     Serial.println("Version: " "v1.0");
     Serial.println("Author: " "MW");
+
+    lv_disp_buf_p = static_cast<lv_color_t*>(malloc(DISP_BUF_SIZE * sizeof(lv_color_t)));
+    if (lv_disp_buf_p == nullptr)
+        LV_LOG_WARN("lv_port_disp_init malloc failed!\n");
+
 
     HAL::Power_Init();
     HAL::Backlight_Init();

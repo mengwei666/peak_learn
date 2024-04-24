@@ -50,13 +50,13 @@ static void disp_wait_cb(lv_disp_drv_t* disp_drv)
   */
 void lv_port_disp_init(SCREEN_CLASS* scr)
 {
-    // lv_log_register_print_cb(
-    //     reinterpret_cast<lv_log_print_g_cb_t>(my_print)); /* register print function for debugging */
+    lv_log_register_print_cb(
+        reinterpret_cast<lv_log_print_g_cb_t>(my_print)); /* register print function for debugging */
 
 
-    lv_disp_buf_p = static_cast<lv_color_t*>(malloc(DISP_BUF_SIZE * sizeof(lv_color_t)));
-    if (lv_disp_buf_p == nullptr)
-        LV_LOG_WARN("lv_port_disp_init malloc failed!\n");
+    // lv_disp_buf_p = static_cast<lv_color_t*>(malloc(DISP_BUF_SIZE * sizeof(lv_color_t)));
+    // if (lv_disp_buf_p == nullptr)
+    //     LV_LOG_WARN("lv_port_disp_init malloc failed!\n");
 
     lv_disp_draw_buf_init(&disp_buf, lv_disp_buf_p, nullptr, DISP_BUF_SIZE);
 

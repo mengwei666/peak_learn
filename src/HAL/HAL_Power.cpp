@@ -169,6 +169,6 @@ void HAL::Power_GetInfo(Power_Info_t* info)
     info->voltage = voltage;
 
 
-    Serial.print("voltage ");
-    Serial.println(voltage);
+    // Serial.print("voltage ");
+    // Serial.println(voltage);
 }

@@ -58,20 +58,16 @@ void Port_Init()
     lv_port_indev_init();
     lv_fs_if_init();
 
-    // lv_example_img_6();
-
-    // lv_example_img_7();
 
 
-
-    // // Update display in parallel thread.
-    // xTaskCreate(
-    //     TaskLvglUpdate,
-    //     "LvglThread",
-    //     20000,
-    //     nullptr,
-    //     configMAX_PRIORITIES - 1,
-    //     &handleTaskLvgl);
+    // Update display in parallel thread.
+    xTaskCreate(
+        TaskLvglUpdate,
+        "LvglThread",
+        20000,
+        nullptr,
+        configMAX_PRIORITIES - 1,
+        &handleTaskLvgl);
 
     /* 背光渐亮 */
     HAL::Backlight_SetGradual(500, 1000);

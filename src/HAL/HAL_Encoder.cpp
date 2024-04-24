@@ -1,6 +1,6 @@
 #include "HAL/HAL.h"
 #include "App/Utils/ButtonEvent/ButtonEvent.h"
-// #include "App/Accounts/Account_Master.h"
+#include "App/Accounts/Account_Master.h"
 
 static ButtonEvent EncoderPush(5000);
 
@@ -8,7 +8,7 @@ static bool EncoderEnable = true;
 static volatile int16_t EncoderDiff = 0;
 static bool EncoderDiffDisable = false;
 
-// Account* actEncoder;
+Account* actEncoder;
 
 static void Encoder_IrqHandler()
 {
@@ -77,8 +77,8 @@ static void Encoder_RotateHandler(int16_t diff)
 {
     HAL::Buzz_Tone(300, 5);
 
-    // actEncoder->Commit((const void*) &diff, sizeof(int16_t));
-    // actEncoder->Publish();
+    actEncoder->Commit((const void*) &diff, sizeof(int16_t));
+    actEncoder->Publish();
 }
 
 void HAL::Encoder_Init()
@@ -92,24 +92,18 @@ void HAL::Encoder_Init()
     EncoderPush.EventAttach(Encoder_PushHandler);
 
 
-//    actEncoder = new Account("Encoder", AccountSystem::Broker(), sizeof(int16_t), nullptr);
+   actEncoder = new Account("Encoder", AccountSystem::Broker(), sizeof(int16_t), nullptr);
 
 }
 
 void HAL::Encoder_Update()
 {
-    // EncoderPush.EventMonitor(Encoder_GetIsPush());
-    uint8_t a = digitalRead(CONFIG_ENCODER_A_PIN);
-    uint8_t b = digitalRead(CONFIG_ENCODER_B_PIN);
-
-    // Serial.print("a ");
-    // Serial.println(a);
-    // Serial.print("b ");
-    // Serial.println(b);
+    EncoderPush.EventMonitor(Encoder_GetIsPush());
 }
 
 int16_t HAL::Encoder_GetDiff()
 {
+    // Serial.println("#5");
     int16_t diff = -EncoderDiff / 2;
     if (diff != 0)
     {

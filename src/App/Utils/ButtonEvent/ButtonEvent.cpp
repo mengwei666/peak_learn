@@ -77,9 +77,6 @@ void ButtonEvent::EventAttach(FuncCallback_t function)
   */
 void ButtonEvent::EventMonitor(bool isPress)
 {
-    // Serial.print("isPress: ");
-    // Serial.println(isPress);
-    
     if(priv.eventCallback == NULL)
     {
         return;

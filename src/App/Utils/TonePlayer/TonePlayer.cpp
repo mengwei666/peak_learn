@@ -21,7 +21,6 @@
  * SOFTWARE.
  */
 #include "TonePlayer.h"
-#include "HAL/HAL.h"
 
 TonePlayer::TonePlayer()
 {
@@ -32,17 +31,6 @@ TonePlayer::TonePlayer()
 
 void TonePlayer::SetMusic(const MusicNode_t* music, uint16_t length)
 {
-    // Serial.println("Setting new music:");
-    // for (int i = 0; i < length; i++) {
-    //     Serial.print("Node ");
-    //     Serial.println(i);
-    //     Serial.print(": Freq = ");
-    //     Serial.println(music[i].Freq);
-    //     Serial.print(", Time = ");
-    //     Serial.println(music[i].Time);
-    //     Serial.print(", Volume = ");
-    //     Serial.println(music[i].Volume);
-    // }
     if (music == CurrentMusic)
     {
         return;
@@ -79,12 +67,6 @@ bool TonePlayer::Update(uint32_t tick)
     {
         if(tick > NextTime)
         {
-            // Serial.print("Length: ");
-            // Serial.println(Length);
-            // Serial.print("CurrentPos: ");
-            // Serial.println(CurrentPos);
-            // Serial.println("-------");
-            
             CallbackFunction(CurrentMusic[CurrentPos].Freq, CurrentMusic[CurrentPos].Volume);
 
             NextTime = tick + CurrentMusic[CurrentPos].Time * Speed / SPEED_NORMAL;
