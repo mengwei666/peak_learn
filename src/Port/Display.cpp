@@ -39,36 +39,40 @@ void TaskLvglUpdate(void* parameter)
 
 
 /**
-  * @brief  ��ʾ��ʼ��
-  * @param  ��
-  * @retval ��
+  * @brief  显示初始化
+  * @param  无
+  * @retval 无
   */
 void Port_Init()
 {
     static SCREEN_CLASS screen;
 
-    /* ��Ļ��ʼ�� */
+    /* 屏幕初始化 */
     screen.begin();
     screen.setRotation(0);
     screen.fillScreen(TFT_BLACK);
 
-    /* lvgl��ʼ�� */
+    /* lvgl初始化 */
     lv_init();
     lv_port_disp_init(&screen);
     lv_port_indev_init();
     lv_fs_if_init();
 
-    lv_example_img_9();
+    // lv_example_img_6();
 
-    // Update display in parallel thread.
-    xTaskCreate(
-        TaskLvglUpdate,
-        "LvglThread",
-        20000,
-        nullptr,
-        configMAX_PRIORITIES - 1,
-        &handleTaskLvgl);
+    // lv_example_img_7();
 
-    /* ���⽥�� */
+
+
+    // // Update display in parallel thread.
+    // xTaskCreate(
+    //     TaskLvglUpdate,
+    //     "LvglThread",
+    //     20000,
+    //     nullptr,
+    //     configMAX_PRIORITIES - 1,
+    //     &handleTaskLvgl);
+
+    /* 背光渐亮 */
     HAL::Backlight_SetGradual(500, 1000);
 }

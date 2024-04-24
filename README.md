@@ -94,3 +94,5 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 选一个图片将图片裁剪到240*240,通过lvgl 在线转换图片网站： https://lvgl.io/tools/imageconverter (版本是V9.1 color format 选的是cf_TRUE_COLOR)
 
 将生成的图片文件c拖到到font中，使用lv_examplas.cpp 的函数调用。初始化函数。
+
+# 24-4-24 循环显示图片：三张图片2秒切换一张
