@@ -97,8 +97,7 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 
 # 24-4-24 循环显示图片：三张图片2秒切换一张
 
-
-24-4-25 
+# 24-4-25 
 
 了解是IMU因素影响了拨码换图片
 
