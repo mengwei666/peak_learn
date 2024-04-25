@@ -54,6 +54,11 @@ do{\
         IMPORT_IMG(bluetooth);
         IMPORT_IMG(pose6d);
         IMPORT_IMG(joints);
+
+        IMPORT_IMG(ni_1);
+        IMPORT_IMG(qq);
+        IMPORT_IMG(dog);
+        IMPORT_IMG(baby);
     }
 
 } /* extern "C" */

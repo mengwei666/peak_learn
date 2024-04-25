@@ -5,6 +5,7 @@ using namespace Page;
 #define ITEM_HEIGHT_MIN   100
 #define ITEM_PAD          ((LV_VER_RES - ITEM_HEIGHT_MIN) / 2)
 
+
 void SystemInfosView::Create(lv_obj_t* root)
 {
 	lv_obj_remove_style_all(root);
@@ -287,11 +288,12 @@ void SystemInfosView::SetIMU(
 	const char* info
 )
 {
-	lv_label_set_text_fmt(
-		ui.imu.labelData,
-		"%s",
-		info
-	);
+	// lv_label_set_text_fmt(
+	// 	ui.imu.labelData,
+	// 	"%s",
+	// 	info
+	// );
+	
 }
 
 void SystemInfosView::SetBattery(

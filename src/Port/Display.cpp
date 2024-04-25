@@ -33,7 +33,7 @@ void TaskLvglUpdate(void* parameter)
     {
         lv_task_handler();
 
-        // delay(5);
+        delay(5);
     }
 }
 

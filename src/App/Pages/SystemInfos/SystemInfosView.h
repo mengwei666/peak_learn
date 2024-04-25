@@ -23,6 +23,9 @@ public:
 
     struct
     {
+        lv_obj_t* labelTitle;
+        lv_obj_t* labelTick;
+        lv_obj_t* canvas;
         item_t joints;
         item_t pose6d;
         item_t system;

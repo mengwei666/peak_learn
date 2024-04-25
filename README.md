@@ -96,3 +96,12 @@ xTaskCreate(http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 将生成的图片文件c拖到到font中，使用lv_examplas.cpp 的函数调用。初始化函数。
 
 # 24-4-24 循环显示图片：三张图片2秒切换一张
+
+
+24-4-25 
+
+了解是IMU因素影响了拨码换图片
+
+了解图片显示是lvgl控制UI设计成的
+
+了解图片切换跟Accounts离不开关系。需要学习Accounts和lvgl控制UI设计

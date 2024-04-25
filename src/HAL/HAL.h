@@ -19,6 +19,13 @@ namespace HAL
     void Backlight_SetGradual(uint32_t target, uint16_t time = 500);
     void Backlight_ForceLit(bool en);
 
+/* I2C */
+    void I2C_Init(bool startScan);
+
+/* IMU */
+    void IMU_Init();
+    void IMU_Update();
+
 /* Power */
     void Power_Init();
     void Power_HandleTimeUpdate();

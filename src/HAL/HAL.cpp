@@ -42,6 +42,9 @@ void HAL::Init()
     HAL::Encoder_Init();
     HAL::Buzz_init();
     HAL::Audio_Init();
+    HAL::I2C_Init(true);
+    HAL::IMU_Init();
+    HAL::Audio_PlayMusic("Startup");
 }
 
 
@@ -50,7 +53,7 @@ void HAL::Update()
     HAL::Power_Update();
     HAL::Encoder_Update();
     HAL::Audio_Update();
-
+    HAL::IMU_Update();
 
 
 
